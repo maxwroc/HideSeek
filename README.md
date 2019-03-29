@@ -45,6 +45,9 @@ Served using [RawGit][8]:
 ## Changelog
 ### v0.8.1
 * Throttling - delayed search with cancellation if the next keystroke arrives
+### v0.8.2
+* Slovak accents support
+* Polish accents support
 
 ## Development
 To test your changes and prepare pull request you need to update bundles. The easiest way to do it is via build script.
