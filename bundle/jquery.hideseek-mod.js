@@ -61,8 +61,14 @@
         $this.opts[val] = $this.data(val) || options[val];
       });
 
-      if ($this.opts.headers)
+      if ($this.opts.headers) {
         $this.opts.ignore += $this.opts.ignore ? ', ' + $this.opts.headers : $this.opts.headers;
+      }
+
+      var getNormalizedText = function (text) {
+        text = text.toLowerCase();
+        return $this.opts.ignore_accents ? hideseek.removeAccents(text) : text;
+      };
 
       var $list = $($this.opts.list);
 
@@ -74,17 +80,16 @@
 
         if ([38, 40, 13].indexOf(e.keyCode) == -1 && (e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true)) {
 
-          var q = $this.val().toLowerCase();
+          var q = getNormalizedText($this.val());
 
           $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function () {
 
-            var data = (
+            var data = getNormalizedText(
               $this.opts.attribute != 'text'
                 ? ($(this).attr($this.opts.attribute) || '')
                 : $(this).text()
-            ).toLowerCase();
+            );
 
-            data = $this.opts.ignore_accents ? hideseek.removeAccents(data) : data;
             var treaty = data.indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)
 
             if (treaty) {
