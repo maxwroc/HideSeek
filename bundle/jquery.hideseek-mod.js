@@ -56,6 +56,7 @@
       var $this = $(this);
 
       $this.opts = [];
+      $this.state = {};
 
       $.map(['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'throttle'], function (val, i) {
         $this.opts[val] = $this.data(val) || options[val];
@@ -78,11 +79,16 @@
 
       $this.keyup(throttle(function (e) {
 
-        if ([38, 40, 13].indexOf(e.keyCode) == -1 && (e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true)) {
+        var q = getNormalizedText($this.val());
 
-          var q = getNormalizedText($this.val());
+        if ($this.opts.min_chars && q.length < $this.opts.min_chars) {
+          // if query is too short show initial set of results
+          q = "";
+        }
 
-          $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function () {
+        if (shouldHandleQueryChange($this, q)) {
+
+          $list.children($this.opts.ignore.trim() ? ':not(' + $this.opts.ignore + ')' : '').removeClass('selected').each(function () {
 
             var data = getNormalizedText(
               $this.opts.attribute != 'text'
@@ -98,14 +104,19 @@
 
             } else {
 
-              show_element($(this));
-
               if ($this.opts.matches && q.match(new RegExp(Object.keys($this.opts.matches)[0])) !== null) {
+
                 if (data.match(new RegExp(Object.values($this.opts.matches)[0])) !== null) {
                   show_element($(this));
                 } else {
                   $(this).hide();
                 }
+
+              }
+              else {
+
+                show_element($(this));
+
               }
             }
 
@@ -236,6 +247,16 @@
         func.apply(null, args);
       }, time);
     }
+  }
+
+  function shouldHandleQueryChange($this, q) {
+    if ($this.state.lastQuery == q) {
+      return false;
+    }
+
+    $this.state.lastQuery = q;
+
+    return true;
   }
 
   $(document).ready(function () { $('[data-toggle="hideseek"]').hideseek(); });
