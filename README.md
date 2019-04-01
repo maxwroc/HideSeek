@@ -4,7 +4,7 @@
 
 A simple, yet customizable quick/live search jQuery plugin.
 
-This is a forked and modified version of the original library. The original project seems to be dead for a while (2 years now) and author is not responsive. Aim of this fork is to keep it active and open for new features and fixes.
+This is a forked and extended version of the original library. The original project seems to be dead for a while (2 years now) and author is not responsive. Aim of this fork is to keep it active and open for new features and fixes.
 
 * [Demonstration page][1]
 * [Documentation (wiki)][3]
@@ -43,11 +43,14 @@ Served using [RawGit][8]:
 * [Prince.gr][5]
 
 ## Changelog
-### v0.8.1
-* Throttling - delayed search with cancellation if the next keystroke arrives
+### vNext
+* Fix: Query change handling
 ### v0.8.2
+* Fix: Ignore accents on query
 * Slovak accents support
 * Polish accents support
+### v0.8.1
+* Throttling - delayed search with cancellation if the next keystroke arrives
 
 ## Development
 To test your changes and prepare pull request you need to update bundles. The easiest way to do it is via build script.
