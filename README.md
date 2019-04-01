@@ -44,7 +44,8 @@ Served using [RawGit][8]:
 
 ## Changelog
 ### vNext
-* Fix: Query change handling
+* Fix: Improved query change handling
+* Generating map file
 ### v0.8.2
 * Fix: Ignore accents on query
 * Slovak accents support
@@ -100,5 +101,5 @@ limitations under the License.
   [6]: https://github.com/maxwroc/HideSeek-Mod/issues?utf8=%E2%9C%93&q=label%3Aquestion
   [7]: https://github.com/maxwroc/HideSeek-Mod/issues?utf8=%E2%9C%93&q=label%3Aenhancement
   [8]: https://rawgit.com/
-  [9]: https://unpkg.com/hideseek-mod/bundle/jquery.hideseek-mod.min.js
-  [10]: https://unpkg.com/hideseek-mod/bundle/jquery.hideseek-mod.js
+  [9]: https://unpkg.com/hideseek-mod/dist/jquery.hideseek-mod.min.js
+  [10]: https://unpkg.com/hideseek-mod/dist/jquery.hideseek-mod.js
