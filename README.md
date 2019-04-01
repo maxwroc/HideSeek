@@ -34,16 +34,16 @@ Do you have any questions? First, take a look [here][6].
 Or if you are looking for enhancements, [here][7].
 
 ## CDN
-Served using [RawGit][8]:
-* [Production URL][9]
-* [Development URL][10]
+Served using:
+* jsdelivr: [[prod][11]] [[dev][12]]
+* unpkg: [[prod][9]] [[dev][10]]
 
 ## Credits
 * [Stevy.gr][4]
 * [Prince.gr][5]
 
 ## Changelog
-### vNext
+### v0.8.3
 * Fix: Improved query change handling
 * Generating map file
 ### v0.8.2
@@ -100,6 +100,7 @@ limitations under the License.
   [5]: http://prince.gr/
   [6]: https://github.com/maxwroc/HideSeek-Mod/issues?utf8=%E2%9C%93&q=label%3Aquestion
   [7]: https://github.com/maxwroc/HideSeek-Mod/issues?utf8=%E2%9C%93&q=label%3Aenhancement
-  [8]: https://rawgit.com/
   [9]: https://unpkg.com/hideseek-mod/dist/jquery.hideseek-mod.min.js
   [10]: https://unpkg.com/hideseek-mod/dist/jquery.hideseek-mod.js
+  [11]: https://cdn.jsdelivr.net/npm/hideseek-mod/dist/jquery.hideseek-mod.min.js
+  [12]: https://cdn.jsdelivr.net/npm/hideseek-mod/dist/jquery.hideseek-mod.js
