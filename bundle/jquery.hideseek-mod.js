@@ -88,7 +88,7 @@
 
         if (shouldHandleQueryChange($this, q)) {
 
-          $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function () {
+          $list.children($this.opts.ignore.trim() ? ':not(' + $this.opts.ignore + ')' : '').removeClass('selected').each(function () {
 
             var data = getNormalizedText(
               $this.opts.attribute != 'text'
@@ -104,14 +104,19 @@
 
             } else {
 
-              show_element($(this));
-
               if ($this.opts.matches && q.match(new RegExp(Object.keys($this.opts.matches)[0])) !== null) {
+
                 if (data.match(new RegExp(Object.values($this.opts.matches)[0])) !== null) {
                   show_element($(this));
                 } else {
                   $(this).hide();
                 }
+
+              }
+              else {
+
+                show_element($(this));
+
               }
             }
 
