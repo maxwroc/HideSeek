@@ -44,7 +44,8 @@ Served using [RawGit][8]:
 
 ## Changelog
 ### vNext
-* Fix: Query change handling
+* Fix: Improved query change handling
+* Generating map file
 ### v0.8.2
 * Fix: Ignore accents on query
 * Slovak accents support
