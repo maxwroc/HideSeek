@@ -43,6 +43,8 @@ Served using:
 * [Prince.gr][5]
 
 ## Changelog
+### v0.8.4
+* Wildcard search (use '*' in queries)
 ### v0.8.3
 * Fix: Improved query change handling
 * Generating map file

@@ -39,6 +39,10 @@ $(document).ready(function() {
     throttle: 2000
   });
 
+  $('#search-wildcards').hideseek({
+    wildcards: true
+  });
+
   $('#search-custom-event').hideseek();
   $('#search-custom-event').on("_after", function() {
     alert('This alert comes after the search!')

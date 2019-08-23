@@ -29,6 +29,11 @@ UL, LI {
 	line-height: 24px !important;
 }
 
+a:not([href]),
+a:not([href]):hover {
+    color: inherit;
+}
+
 LI A {
 	color: inherit;
 }

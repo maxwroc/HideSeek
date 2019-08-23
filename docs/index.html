@@ -70,7 +70,7 @@
       <div class="row">
         <div class="six columns">
           <article>
-            <h4>Default usage</h4>
+            <h4><a name="Default usage">Default usage</a></h4>
 <pre data-language="javascript">
 $('#search-1').hideseek();
 </pre>
@@ -99,7 +99,7 @@ $('#search-1').hideseek();
       <div class="row">
         <div class="six columns">
           <article id="highlight">
-            <h4>Highlight</h4>
+            <h4><a name="Highlight">Highlight</a></h4>
 <pre data-language="javascript">
 $('#search-highlight').hideseek({
   highlight: true
@@ -126,7 +126,7 @@ $('#search-highlight').hideseek({
       <div class="row">
         <div class="six columns">
           <article id="nodata">
-            <h4>No results message</h4>
+            <h4><a name="No results message">No results message</a></h4>
 <pre data-language="javascript">
 $('#search-nodata').hideseek({
   nodata: 'No results found'
@@ -155,7 +155,7 @@ $('#search-nodata').hideseek({
       <div class="row">
         <div class="six columns">
           <article id="navigation">
-            <h4>Navigation</h4>
+            <h4><a name="Navigation">Navigation</a></h4>
 <pre data-language="javascript">
 $('#search-navigation').hideseek({
   nodata: 'No results found',
@@ -187,7 +187,7 @@ $('#search-navigation').hideseek({
       <div class="row">
         <div class="six columns">
           <article>
-            <h4>Ignore elements</h4>
+            <h4><a name="Ignore elements">Ignore elements</a></h4>
 <pre data-language="javascript">
 $('#search-ignore').hideseek({
   highlight: true,
@@ -220,7 +220,7 @@ $('#search-ignore').hideseek({
       <div class="row">
         <div class="six columns">
           <article>
-            <h4>Ignore accents</h4>
+            <h4><a name="Ignore accents">Ignore accents</a></h4>
 <pre data-language="javascript">
 $('#search-ignore').hideseek({
   highlight: true,
@@ -252,7 +252,7 @@ $('#search-ignore').hideseek({
       <div class="row">
         <div class="six columns">
           <article>
-            <h4>Headers</h4>
+            <h4><a name="Headers">Headers</a></h4>
 <pre data-language="javascript">
 $('#search-headers').hideseek({
   headers: '.origin'
@@ -285,7 +285,7 @@ $('#search-headers').hideseek({
       <div class="row">
         <div class="six columns">
           <article>
-            <h4>Hidden mode</h4>
+            <h4><a name="Hidden mode">Hidden mode</a></h4>
 <pre data-language="javascript">
 $('#search-hidden-mode').hideseek({
   hidden_mode: true
@@ -316,7 +316,7 @@ $('#search-hidden-mode').hideseek({
       <div class="row">
         <div class="six columns">
           <article>
-            <h4>Throttling</h4>
+            <h4><a name="Throttling">Throttling</a></h4>
 <pre data-language="javascript">
 $('#search-throttle').hideseek({
   throttle: 2000
@@ -344,7 +344,40 @@ $('#search-throttle').hideseek({
         </div>
       </div>
 
+      <div class="row">
+        <div class="six columns">
+          <article>
+            <h4><a name="Wildcards">Wildcards</a></h4>
+<pre data-language="javascript">
+$('#search-wildcards').hideseek({
+  wildcards: true
+});
+</pre>
+          </article>
+        </div>
+        <div class="six columns">
+          <article>
+            <label for="search">10 Words Defined by Their Anagrams</label>
+            <input id="search-wildcards" name="search" placeholder="Start typing here query with '*' wildcard" type="text" data-list=".wildcards_list" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical wildcards_list">
+              <li>Angered - enraged</li>
+              <li>Apple Macintosh - laptop machines</li>
+              <li>Astronomer - moon starer</li>
+              <li>Brush - shrub</li>
+              <li>Customers - store scum</li>
+              <li>Dictionary - indicatory</li>
+              <li>Dormitory - dirty room</li>
+              <li>Editor - redo it</li>
+              <li>Eleven plus two - twelve plus one</li>
+              <li>Schoolmaster - the classroom</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
     </div>
+
+  </div>
   </section>
 
   <div class="container">
