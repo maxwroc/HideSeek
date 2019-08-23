@@ -17,6 +17,7 @@ const bundleFileName = "jquery.hideseek-mod.js"
 const minFileName = bundleFileName.replace(".js", ".min.js");
 const mapFileName = minFileName + ".map";
 
+const bundleFilePath = path.join(targetDir, bundleFileName);
 const minFilePath = path.join(targetDir, minFileName);
 const mapFilePath = path.join(targetDir, mapFileName);
 
@@ -57,4 +58,4 @@ fs.writeFileSync(minFilePath, min.code, "utf8");
 fs.writeFileSync(mapFilePath, min.map, "utf8");
 
 // copy minifid file to demo page dir
-fs.createReadStream(minFilePath).pipe(fs.createWriteStream(path.join("docs/javascripts/vendor", "jquery.hideseek-mod.min.js")));
+fs.createReadStream(bundleFilePath).pipe(fs.createWriteStream(path.join("docs/javascripts/vendor", "jquery.hideseek-mod.js")));

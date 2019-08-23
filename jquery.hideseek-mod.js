@@ -4,7 +4,7 @@
  * @copyright Copyright 2015, Dimitris Krestos
  * @license   Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
  * @link      http://vdw.staytuned.gr
- * @version   v0.8.3
+ * @version   v0.8.4
  *
  * Dependencies are include in minified versions at the bottom:
  * 1. Highlight v4 by Johann Burkard
@@ -47,6 +47,7 @@
       hidden_mode: false,
       min_chars: 1,
       throttle: 0,
+      wildcards: false
     };
 
     var options = $.extend(defaults, options);
@@ -58,7 +59,7 @@
       $this.opts = [];
       $this.state = {};
 
-      $.map(['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'throttle'], function (val, i) {
+      $.map(['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'throttle', 'wildcards'], function (val, i) {
         $this.opts[val] = $this.data(val) || options[val];
       });
 
@@ -88,6 +89,19 @@
 
         if (shouldHandleQueryChange($this, q)) {
 
+          var isQueryFound = function (text) {
+            return text.indexOf(q) != -1;
+          }
+
+          if ($this.opts.wildcards && q.indexOf('*') !== -1 && q.length > 1) {
+            // convert query to regexp by escaping and replacing '*'
+            var regExpString = (q[0] == '*' ? '' : '\\b') + q.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '\\w*') + (q[q.length - 1] == '*' ? '' : '\\b');
+            var pattern = new RegExp(regExpString);
+            isQueryFound = function (text) {
+              return pattern.test(text);
+            }
+          }
+
           $list.children($this.opts.ignore.trim() ? ':not(' + $this.opts.ignore + ')' : '').removeClass('selected').each(function () {
 
             var data = getNormalizedText(
@@ -96,7 +110,7 @@
                 : $(this).text()
             );
 
-            var treaty = data.indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)
+            var treaty = !isQueryFound(data) || q === ($this.opts.hidden_mode ? '' : false)
 
             if (treaty) {
 
@@ -104,6 +118,9 @@
 
             } else {
 
+              // TODO consider removing in the future
+              // matches is a map - when key matches query then the text is tested against value
+              // both keys and values from the map/matches object are treated as RegExp patterns
               if ($this.opts.matches && q.match(new RegExp(Object.keys($this.opts.matches)[0])) !== null) {
 
                 if (data.match(new RegExp(Object.values($this.opts.matches)[0])) !== null) {
