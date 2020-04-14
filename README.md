@@ -43,6 +43,8 @@ Served using:
 * [Prince.gr][5]
 
 ## Changelog
+### v0.8.5
+* Fix: Don't show no-results message on empty query and hidden-mode
 ### v0.8.4
 * Wildcard search (use '*' in queries)
 ### v0.8.3
