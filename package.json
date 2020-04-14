@@ -18,7 +18,10 @@
     "hideseek",
     "hideseek-mod"
   ],
-  "author": "Dimitris Krestos <dkrestos@gmail.com>",
+  "author": {
+    "name": "Dimitris Krestos and ohers",
+    "url": "https://github.com/maxwroc/HideSeek-Mod/graphs/contributors"
+  },
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/maxwroc/HideSeek-Mod/issues"
