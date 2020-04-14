@@ -142,7 +142,8 @@
           });
 
           // No results message
-          if ($this.opts.nodata) {
+          // When hidden_mode is on we show no results msg only when query is not empty
+          if ($this.opts.nodata && (!$this.opts.hidden_mode || q)) {
 
             $list.find('.no-results').remove();
 
