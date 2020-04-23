@@ -35,6 +35,7 @@ Or if you are looking for enhancements, [here][7].
 
 ## CDN
 Served using:
+* cdnjs: [[prod][13]] [[dev][14]]
 * jsdelivr: [[prod][11]] [[dev][12]]
 * unpkg: [[prod][9]] [[dev][10]]
 
@@ -108,3 +109,5 @@ limitations under the License.
   [10]: https://unpkg.com/hideseek-mod/dist/jquery.hideseek-mod.js
   [11]: https://cdn.jsdelivr.net/npm/hideseek-mod/dist/jquery.hideseek-mod.min.js
   [12]: https://cdn.jsdelivr.net/npm/hideseek-mod/dist/jquery.hideseek-mod.js
+  [13]: https://cdnjs.cloudflare.com/ajax/libs/hideseek-mod/0.8.5/jquery.hideseek-mod.min.js
+  [14]: https://cdnjs.cloudflare.com/ajax/libs/hideseek-mod/0.8.5/jquery.hideseek-mod.js
