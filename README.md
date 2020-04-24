@@ -1,6 +1,7 @@
 # HideSeek-Mod
-
-[![npm version](https://badge.fury.io/js/hideseek-mod.png)](http://badge.fury.io/js/hideseek-mod)
+[![npm](https://img.shields.io/npm/dm/hideseek-mod?label=npm%20downloads)](https://www.npmjs.com/package/hideseek-mod)
+[![npm version](https://img.shields.io/npm/v/hideseek-mod?color=blue)](https://www.npmjs.com/package/hideseek-mod)
+[![cdn version](https://img.shields.io/cdnjs/v/hideseek-mod)](https://cdnjs.com/libraries/hideseek-mod)
 
 A simple, yet customizable quick/live search jQuery plugin.
 
